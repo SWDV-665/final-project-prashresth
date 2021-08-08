@@ -1,6 +1,6 @@
 ## HappyPaws
 
-###Testing:
+### Testing:
 - Devices:
     - Works in both iOS and Android emulators.
     - Mainly tested on an iPhone (real device) as I do not own an android device.
@@ -8,12 +8,12 @@
 - A message (alert) will popup for TODOs indicating that the feature is not available yet.
 - No compilation errors.  
 
-###Native Plugins used:
+### Native Plugins used:
 - Vibration
 - Camera
 - Email Composer (happy path only)
 
-###Custom Providers:
+### Custom Providers:
 - Camera service
 - Dog service
 - Gallery service
@@ -23,17 +23,17 @@
 - Review service
 - user auth service 
 
-###TODO Features:
+### TODO Features:
 - Regular user management
     - Registration
     - Add reviews (goes to pending)
     - Add posts (goes to pending)
 
-###Styling:
+### Styling:
 Most of the styling details are in `app.scss` and `theme\variables.scss`
 and contains some inline styling as well.
 
-NOTE: 
+#### NOTES: 
 - I have experimented with converting observables to promises, using promise chaining and async/await throughout
 the code base so code style is not consistent. 
 - I have included the backend project along with the submission which is hosted in Heroku as well. 
