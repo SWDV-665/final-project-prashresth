@@ -1,0 +1,51 @@
+<!--
+  Generated template for the GalleryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar color="banner">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Gallery</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="body">
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+                pullingIcon="chevron-down-circle-outline"
+                pullingText="Pull to refresh"
+                refreshingSpinner="circles"
+                refreshingText="Refreshing...">
+        </ion-refresher-content>
+    </ion-refresher>
+    <ion-card class="card_content">
+        <ion-card-content>
+            <div>
+                <h1 class="text-effect">Welcome to the gallery!</h1>
+                <p class="intro_text">
+                    This page is dedicated to all the dog lovers around the world.
+                </p>
+                <p>
+                    Enjoy these random pictures of these cute dogs and gain some information about their breed along the
+                    way.<br>
+                    Don't feel like scrolling? Just pull the screen down! :)
+                </p>
+            </div>
+        </ion-card-content>
+    </ion-card>
+    <ion-card *ngFor="let image of images">
+        <img [src]="image.message" onError="src = '../../assets/imgs/noImageFound.png'" alt="dog" class="gallery-images">
+        <ion-card-content>
+            <ion-card-title class="gallery-card-text">
+                Breed: {{ image.breed.toUpperCase() }}
+            </ion-card-title>
+        </ion-card-content>
+    </ion-card>
+    <ion-card-content *ngIf="images !== undefined">
+        <button ion-button block (click)="refreshPage()">View more!</button>
+    </ion-card-content>
+</ion-content>

@@ -1,0 +1,75 @@
+<ion-header>
+    <ion-navbar color="banner">
+        <ion-title>Edit: {{listing.name}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="body">
+    <ion-card class="card_content" padding>
+        <ion-card-title class="intro_text">
+            Add a photo:
+        </ion-card-title>
+        <!--    <button ion-button block style="margin-bottom: 1%" (click)="getCamera()">-->
+        <button ion-button block style="margin-bottom: 1%" (click)="getCamera()">
+            <ion-icon name="camera" style="margin-right: 5%"></ion-icon>
+            Take a photo
+        </button>
+        <button ion-button block style="margin-bottom: 2%" (click)="getGallery()">
+            <ion-icon name="apps" style="margin-right: 2%"></ion-icon>
+            Select from gallery
+        </button>
+        <img [src]="imgUrl" onError="src = '../../assets/imgs/noImageFound.png'" alt="dog" class="gallery-images">
+        <ion-list>
+            <ion-card-title class="intro_text">
+                Dog Details:
+            </ion-card-title>
+            <ion-item>
+                <ion-label floating>Name:</ion-label>
+                <ion-input type="text" [(ngModel)]="dogName" required></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Breed:</ion-label>
+                <ion-input type="text" [(ngModel)]="breed"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Age:</ion-label>
+                <ion-input type="number" min="1" max="80" [(ngModel)]="age"></ion-input>
+            </ion-item>
+            <ion-item style="margin-bottom: 5%">
+                <ion-label floating>Gender:</ion-label>
+                <ion-select interface="popover" [(ngModel)]="gender">
+                    <ion-option value="female">Female</ion-option>
+                    <ion-option value="male">Male</ion-option>
+                </ion-select>
+            </ion-item>
+            <ion-card-title class="intro_text">
+                Owner Details:
+            </ion-card-title>
+            <ion-item>
+                <ion-label floating>Name:</ion-label>
+                <ion-input type="text" [(ngModel)]="ownerName"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Email:</ion-label>
+                <ion-input type="text" [(ngModel)]="email"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Phone:</ion-label>
+                <ion-input type="text" [(ngModel)]="phone"></ion-input>
+            </ion-item>
+            <ion-item style="margin-bottom: 5%">
+                <ion-label floating>Address:</ion-label>
+                <ion-input type="text" [(ngModel)]="address"></ion-input>
+            </ion-item>
+            <ion-row>
+                <ion-col>
+                    <button ion-button color="danger" style="float: left" (click)="goToList()">Cancel</button>
+                </ion-col>
+                <ion-col>
+                    <button ion-button color="secondary" style="float: right" (click)="saveDog(listing._id)">Save</button>
+                    <br>
+                </ion-col>
+            </ion-row>
+        </ion-list>
+    </ion-card>
+</ion-content>
