@@ -1,0 +1,51 @@
+<!--
+  Generated template for the ReviewsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar color="banner">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Blog Posts</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="body">
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+                pullingIcon="chevron-down-circle-outline"
+                pullingText="Pull to refresh"
+                refreshingSpinner="circles"
+                refreshingText="Refreshing...">
+        </ion-refresher-content>
+    </ion-refresher>
+    <ion-card class="card_content">
+        <ion-card-content>
+            <h1 class="text-effect centered">
+                Posts we all
+                <ion-icon name="heart-outline"></ion-icon>
+                !
+            </h1>
+            <div class="centered">
+                <p class="intro_text">
+                    Here are some blog posts from our fellow dog lovers.
+                </p>
+            </div>
+        </ion-card-content>
+    </ion-card>
+    <div *ngFor="let post of posts">
+        <ion-card (click)="openDetails(post)">
+            <ion-card-title class="gallery-card-text" style="text-align: center">
+                {{ post.title }}
+            </ion-card-title>
+            <img [src]="post.image" onError="src = '../../assets/imgs/noImageFound.png'" alt="dog" class="gallery-images">
+            <ion-card-content>
+<!--                kind of a hack since the CSS I added did not work on iOS-->
+                <div class="module reviews" [innerHTML]="post.content.split('</')[0] + '.....'"></div>
+            </ion-card-content>
+        </ion-card>
+    </div>
+</ion-content>
