@@ -1,21 +1,13 @@
-<!--
-  Generated template for the DogsPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
     <ion-navbar color="banner">
-        <ion-title >Current Members</ion-title>
-        <button
-                ion-button
-                clear
-                small
-                class="logoutButton"
-                (click)="logout()"
-        >
-            Logout
-        </button>
+        <ion-title>
+            Current Members
+        </ion-title>
+        <ion-buttons end>
+            <button (click)="logout()" ion-button icon-only>
+                Logout
+            </button>
+        </ion-buttons>
     </ion-navbar>
 </ion-header>
 
@@ -31,9 +23,9 @@
             </div>
             <ion-row>
                 <ion-col>
-                    <a href="#">
-                        <button ion-button color="danger" style="float: left" (click)="logout()">Logout</button>
-                    </a><br>
+<!--                    <a href="#">-->
+<!--                        <button ion-button color="danger" style="float: left" (click)="logout()">Logout</button>-->
+<!--                    </a><br>-->
                 </ion-col>
                 <ion-col>
                     <a href="#">

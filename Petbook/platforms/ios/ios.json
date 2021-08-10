@@ -9,14 +9,14 @@
         "parents": {
           "NSCameraUsageDescription": [
             {
-              "xml": "<string>You can take photos</string>",
-              "count": 2
-            },
-            {
               "xml": "<string>need camera access to take pictures</string>",
-              "count": 1,
+              "count": 2,
               "mode": "merge",
               "id": "config.xml"
+            },
+            {
+              "xml": "<string>You can take photos</string>",
+              "count": 1
             }
           ],
           "NSPhotoLibraryUsageDescription": [
