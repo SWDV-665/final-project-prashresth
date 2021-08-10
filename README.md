@@ -25,9 +25,9 @@
 
 ### TODO Features:
 - Regular user management
-    - Registration
-    - Add reviews (goes to pending)
-    - Add posts (goes to pending)
+    - Dashboard for regular users
+    - Add reviews as reg. users (goes to pending)
+    - Add posts as reg. users (goes to pending)
 
 ### Styling:
 Most of the styling details are in `app.scss` and `theme\variables.scss`

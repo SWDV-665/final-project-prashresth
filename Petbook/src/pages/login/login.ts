@@ -34,7 +34,7 @@ export class LoginPage {
             return await this.loginFailure(`Username and Password are required.`)
         }
         const alert = this.alert.create({
-            title: "Coming Soon!",
+            title: "Acknowledgement",
             subTitle: "<p>\n" +
                 "              By clicking the Ok button you acknowledge that you are an active employee of Happy Paws and have a valid \n" +
                 "              login credentials. \n" +
@@ -59,15 +59,20 @@ export class LoginPage {
     }
 
     async proceedWithLogin() {
+        const loading = this.helper.createSpinner(null, 'Logging in...')
+        await loading.present();
         this.userAuth.login(this.email).then(user => {
             if (this.password === user.data[0].password) {
                 this.loginSuccess(user.data[0].username)
+                loading.dismiss();
             } else {
                 this.loginFailure(`Username or Password is incorrect.\n Please try again.`)
+                loading.dismiss();
             }
         }).catch(err => {
             console.log(err)
             this.loginFailure(`Username or Password is incorrect.\n Please try again.`)
+            loading.dismiss();
         });
     }
 

@@ -40,12 +40,10 @@ export class DogDetailsPage {
   }
 
   async deleteDog(id) {
-    console.log(id)
-    const loading = this.helper.createSpinner()
+    const loading = this.helper.createSpinner(null, 'Deleting member...')
     await loading.present().then(() => {
       return this.dogService.deleteDog(id)
     }).then(data => {
-      console.log(data);
       loading.dismiss(data);
       const toast = this.helper.createToast(
         `Dog record deleted successfully.`,
@@ -54,7 +52,6 @@ export class DogDetailsPage {
       toast.present();
       this.navCtrl.setRoot(DogsPage);
     }).catch(err => {
-      console.log(err);
       const toast = this.helper.createToast(
         `Something went wrong.\nPlease try again.`,
         "toast-danger"

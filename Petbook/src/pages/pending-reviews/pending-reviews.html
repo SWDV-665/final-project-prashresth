@@ -6,16 +6,14 @@
 -->
 <ion-header>
     <ion-navbar color="banner">
-        <ion-title>Pending Reviews</ion-title>
-        <button
-                ion-button
-                clear
-                small
-                class="logoutButton"
-                (click)="logout()"
-        >
-            Logout
-        </button>
+        <ion-title>
+            Pending Reviews
+        </ion-title>
+        <ion-buttons end>
+            <button (click)="logout()" ion-button icon-only>
+                Logout
+            </button>
+        </ion-buttons>
     </ion-navbar>
 </ion-header>
 
