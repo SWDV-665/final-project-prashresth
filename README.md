@@ -1,3 +1,5 @@
+# 8/22 - Access to MongoDB removed. All calls to the backend will fail.
+
 ## HappyPaws
 
 ### Testing:
